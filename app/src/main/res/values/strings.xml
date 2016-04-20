@@ -2,4 +2,5 @@
 <string name="app_name">常用组件测试</string>
 <string name="List_View">ListView演示</string>
 <string name="commonControl_List">常用Android演示</string>
+<string name="s_view_btn">more</string>
 </resources>

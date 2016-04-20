@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView_fun);
         listView.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
+                android.R.layout.simple_expandable_list_item_1,
                 commonFunList));
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
