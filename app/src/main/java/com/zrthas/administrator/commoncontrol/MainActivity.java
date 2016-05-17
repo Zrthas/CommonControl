@@ -3,6 +3,7 @@ package com.zrthas.administrator.commoncontrol;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,5 +79,29 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        slidingMenu = new SlidingMenu(this);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setBehindOffsetRes(R.dimen.sliding_menu_offset);
+        slidingMenu.setTouchModeAbove(slidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.attachToActivity(this,SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setMenu(R.layout.slidingmenu);
+
     }
+
+    private SlidingMenu slidingMenu;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode)
+        {
+            case KeyEvent.KEYCODE_MENU:
+                slidingMenu.toggle(true);
+                break;
+            default:
+                break;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

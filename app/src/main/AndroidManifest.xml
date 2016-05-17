@@ -22,7 +22,7 @@
         <activity android:name=".ListViewActivity" />
         <activity android:name=".ProgressBarActivity" />
         <activity android:name=".ScrollViewActivity" />
-        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".SpinnerActivity"/>
     </application>
 
 </manifest>
